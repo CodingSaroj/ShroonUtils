@@ -98,6 +98,24 @@
         #define SHRN_MEMMOVE(dst, src, size) SUTL_InternalMemmove(dst, src, size)
     #endif
 
+    #ifndef SHRN_MEMSET
+        #warning `SHRN_MEMSET` should be defined if `SHRN_NO_USE_STRING_H` is defined, otherwise, a (possibly less performant) custom implementation is used.
+
+        void * SUTL_InternalMemset(void * ptr, const void * val, size_t size)
+
+        #ifdef SUTL_IMPLEMENTATION
+            void * SUTL_InternalMemset(void * ptr, const void * val, size_t size)
+            {
+                while (size--)
+                    ((uint8_t *)ptr)[size] = val;
+
+                return ptr;
+            }
+        #endif
+
+        #define SHRN_MEMSET(ptr, val, size) SUTL_InternalMemcpy(ptr, val, size)
+    #endif
+
     #ifndef SHRN_STRLEN
         #warning "`SHRN_STRLEN` should be defined if `SHRN_NO_USE_STRING_H` is defined, otherwise, a (possibly less performant) custom implementation is used."
 
@@ -146,6 +164,7 @@
 
     #define SHRN_MEMCPY(dst, src, size) memcpy(dst, src, size)
     #define SHRN_MEMMOVE(dst, src, size) memmove(dst, src, size)
+    #define SHRN_MEMSET(ptr, val, size) memset(ptr, val, size)
     #define SHRN_STRLEN(str) strlen(str)
     #define SHRN_STRCMP(str0, str1) strcmp(str0, str1)
 #endif

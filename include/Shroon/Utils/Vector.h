@@ -371,6 +371,12 @@ void SUTL_InternalVectorEraseN(void ** v, size_t at, size_t count);
                 (SUTLVectorSize(*v) - count - at) * SUTLVectorElemsize(*v)
             );
 
+        SHRN_MEMSET(
+            SUTLVectorOffset(*v, SUTLVectorSize(*v) - count),
+            0,
+            SUTLVectorElemsize(*v) * count
+        );
+
         SUTLVectorSize(*v) -= count;
     }
 
