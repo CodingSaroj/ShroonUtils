@@ -1,0 +1,1378 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__Internal" kind="group">
+    <compoundname>Internal</compoundname>
+    <title>Internal</title>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__Internal_1ga0444d7bd44541ad044d39b8fef2e1413" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SUTLHashmap::Size</definition>
+        <argsstring></argsstring>
+        <name>Size</name>
+        <briefdescription>
+<para>The number of entries in the hashmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="58" column="12" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SUTLHashmap::KeySize</definition>
+        <argsstring></argsstring>
+        <name>KeySize</name>
+        <briefdescription>
+<para>The size of the key type of the hashmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="63" column="12" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga1e9900641773c23ace17a4ceb5b8f627" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SUTLHashmap::ValueSize</definition>
+        <argsstring></argsstring>
+        <name>ValueSize</name>
+        <briefdescription>
+<para>The size of the value type the hashmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="68" column="12" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SUTLHashmap::ParamK</definition>
+        <argsstring></argsstring>
+        <name>ParamK</name>
+        <briefdescription>
+<para>Don&apos;t access this directly. A pointer to key type. This is used to pass parameters to internal functions which allows passing rvalues to them. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="74" column="11" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga07590e21e707b6401a309af310a28e80" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SUTLHashmap::ParamV</definition>
+        <argsstring></argsstring>
+        <name>ParamV</name>
+        <briefdescription>
+<para>Don&apos;t access this directly. A pointer to value type. This is used to pass parameters to internal functions which allows passing rvalues to them. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="80" column="11" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* SUTLHashmap::Keys[32]</definition>
+        <argsstring>[32]</argsstring>
+        <name>Keys</name>
+        <briefdescription>
+<para>Don&apos;t access this directly. An array of vector of <computeroutput>char</computeroutput> which stores the keys the hashmap. This is parallel to <computeroutput>Values</computeroutput>. It uses char so that the layout remains the same for hashmaps with different key types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="87" column="11" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga9c68d9179d6ee4d00ef0ce8ce75452ce" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* SUTLHashmap::Values[32]</definition>
+        <argsstring>[32]</argsstring>
+        <name>Values</name>
+        <briefdescription>
+<para>Don&apos;t access this directly. An array of vector of <computeroutput>char</computeroutput> which stores the keys the hashmap. This is parallel to <computeroutput>Keys</computeroutput>. It uses char so that the layout remains the same for hashmaps with different value types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="94" column="11" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1gae4e8125540c9b501dc4724b45a19ac2e" prot="public" static="no" mutable="no">
+        <type>size_t(*</type>
+        <definition>size_t( * SUTLHashmap::Hash) (const void *)</definition>
+        <argsstring>)(const void *)</argsstring>
+        <name>Hash</name>
+        <briefdescription>
+<para>The function pointer which hashes the key type of the hashmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="99" column="5" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga1a5396ba8c67fa6594cc948171ebcd8d" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int( * SUTLHashmap::KeyComp) (const void *, const void *)</definition>
+        <argsstring>)(const void *, const void *)</argsstring>
+        <name>KeyComp</name>
+        <briefdescription>
+<para>The function pointer which compares two keys. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="104" column="5" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1gadd760c31d520b44c6a7c19e587308b07" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SUTLHashset::Size</definition>
+        <argsstring></argsstring>
+        <name>Size</name>
+        <briefdescription>
+<para>The number of entries in the hashset. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="61" column="12" bodyfile="include/Shroon/Utils/Hashset.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1gaf1bd1219cdeadf5dcf0a69e99697d7be" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SUTLHashset::KeySize</definition>
+        <argsstring></argsstring>
+        <name>KeySize</name>
+        <briefdescription>
+<para>The size of the key type of the hashset. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="66" column="12" bodyfile="include/Shroon/Utils/Hashset.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga4041241c97d530d31ccbcbd8a9bb0ee7" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SUTLHashset::ParamK</definition>
+        <argsstring></argsstring>
+        <name>ParamK</name>
+        <briefdescription>
+<para>Don&apos;t access this directly. A pointer to key type. This is used to pass parameters to internal functions which allows passing rvalues to them. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="72" column="11" bodyfile="include/Shroon/Utils/Hashset.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga36972b8b605e5edd2a790f9640be19d7" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* SUTLHashset::Keys[32]</definition>
+        <argsstring>[32]</argsstring>
+        <name>Keys</name>
+        <briefdescription>
+<para>Don&apos;t access this directly. An array of vector of <computeroutput>char</computeroutput> which stores the keys the hashset. This is parallel to <computeroutput>Values</computeroutput>. It uses char so that the layout remains the same for hashsets with different key types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="79" column="11" bodyfile="include/Shroon/Utils/Hashset.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1gaab3c83e33018b24482bba521bd70dcb1" prot="public" static="no" mutable="no">
+        <type>size_t(*</type>
+        <definition>size_t( * SUTLHashset::Hash) (const void *)</definition>
+        <argsstring>)(const void *)</argsstring>
+        <name>Hash</name>
+        <briefdescription>
+<para>The function pointer which hashes the key type of the hashset. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="84" column="5" bodyfile="include/Shroon/Utils/Hashset.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga8c5fd1b486486dd15e0208ef3b233344" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int( * SUTLHashset::KeyComp) (const void *, const void *)</definition>
+        <argsstring>)(const void *, const void *)</argsstring>
+        <name>KeyComp</name>
+        <briefdescription>
+<para>The function pointer which compares two keys. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="89" column="5" bodyfile="include/Shroon/Utils/Hashset.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__Internal_1ga838cd0994f3f5e719990dc821f7225bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref></type>
+        <definition>SUTLHashmap SUTL_InternalHashmapNew</definition>
+        <argsstring>(size_t keysize, size_t valuesize, size_t(*hash)(const void *), int(*keycomp)(const void *, const void *))</argsstring>
+        <name>SUTL_InternalHashmapNew</name>
+        <param>
+          <type>size_t</type>
+          <declname>keysize</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>valuesize</declname>
+        </param>
+        <param>
+          <type>size_t(*)(const void *)</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>int(*)(const void *, const void *)</type>
+          <declname>keycomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="194" column="13" declfile="include/Shroon/Utils/Hashmap.h" declline="194" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gae1f724922eb49605dec643e00fcaf879" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SUTL_InternalHashmapFree</definition>
+        <argsstring>(SUTLHashmap *hm)</argsstring>
+        <name>SUTL_InternalHashmapFree</name>
+        <param>
+          <type><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref> *</type>
+          <declname>hm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="195" column="6" declfile="include/Shroon/Utils/Hashmap.h" declline="195" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga6633c998f782d19ce1a8e7cf90e9818c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* SUTL_InternalHashmapInsert</definition>
+        <argsstring>(SUTLHashmap *hm)</argsstring>
+        <name>SUTL_InternalHashmapInsert</name>
+        <param>
+          <type><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref> *</type>
+          <declname>hm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="196" column="7" declfile="include/Shroon/Utils/Hashmap.h" declline="196" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga534e3f25e4dbeee073debc59e8a615f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SUTL_InternalHashmapErase</definition>
+        <argsstring>(SUTLHashmap *hm)</argsstring>
+        <name>SUTL_InternalHashmapErase</name>
+        <param>
+          <type><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref> *</type>
+          <declname>hm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="197" column="6" declfile="include/Shroon/Utils/Hashmap.h" declline="197" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga58bef1a42620b7fc1e452bc54a1311c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* SUTL_InternalHashmapGet</definition>
+        <argsstring>(SUTLHashmap *hm)</argsstring>
+        <name>SUTL_InternalHashmapGet</name>
+        <param>
+          <type><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref> *</type>
+          <declname>hm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="198" column="7" declfile="include/Shroon/Utils/Hashmap.h" declline="198" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gafbaabac20c55b40b408db84f4f14e15d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structSUTLHashset" kindref="compound">SUTLHashset</ref></type>
+        <definition>SUTLHashset SUTL_InternalHashsetNew</definition>
+        <argsstring>(size_t keysize, size_t(*hash)(const void *), int(*keycomp)(const void *, const void *))</argsstring>
+        <name>SUTL_InternalHashsetNew</name>
+        <param>
+          <type>size_t</type>
+          <declname>keysize</declname>
+        </param>
+        <param>
+          <type>size_t(*)(const void *)</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>int(*)(const void *, const void *)</type>
+          <declname>keycomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="172" column="13" declfile="include/Shroon/Utils/Hashset.h" declline="172" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga09c7e73f38e4a49ec289ae9bb9dccf22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SUTL_InternalHashsetFree</definition>
+        <argsstring>(SUTLHashset *hs)</argsstring>
+        <name>SUTL_InternalHashsetFree</name>
+        <param>
+          <type><ref refid="structSUTLHashset" kindref="compound">SUTLHashset</ref> *</type>
+          <declname>hs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="173" column="6" declfile="include/Shroon/Utils/Hashset.h" declline="173" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga768df52259019e1a8a75ebf71d80298a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* SUTL_InternalHashsetInsert</definition>
+        <argsstring>(SUTLHashset *hs)</argsstring>
+        <name>SUTL_InternalHashsetInsert</name>
+        <param>
+          <type><ref refid="structSUTLHashset" kindref="compound">SUTLHashset</ref> *</type>
+          <declname>hs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="174" column="7" declfile="include/Shroon/Utils/Hashset.h" declline="174" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga355752ded9d402929d3cdccfcd5ca94e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SUTL_InternalHashsetErase</definition>
+        <argsstring>(SUTLHashset *hs)</argsstring>
+        <name>SUTL_InternalHashsetErase</name>
+        <param>
+          <type><ref refid="structSUTLHashset" kindref="compound">SUTLHashset</ref> *</type>
+          <declname>hs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="175" column="6" declfile="include/Shroon/Utils/Hashset.h" declline="175" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gabccfdb8686a25da98498c443d1917ff7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* SUTL_InternalHashsetGet</definition>
+        <argsstring>(SUTLHashset *hs)</argsstring>
+        <name>SUTL_InternalHashsetGet</name>
+        <param>
+          <type><ref refid="structSUTLHashset" kindref="compound">SUTLHashset</ref> *</type>
+          <declname>hs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="176" column="7" declfile="include/Shroon/Utils/Hashset.h" declline="176" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gad15961639d7ca2063911e648a1cc48be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_uchar</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_uchar</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="76" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="76" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gad0317794fed8b0d29577c5476a362d51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_ushort</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_ushort</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="77" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="77" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gaca4557af21bd9e8422d2de7ea2eef315" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_uint</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_uint</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="78" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="78" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga38645daa5f47d0184e9dba2f1a27a1d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_ulong</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_ulong</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="79" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="79" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gad92aeadba56310e0dbf9e81b75c119d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_char</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_char</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="80" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="80" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga05f7c079ff3d7186de20ece22ab07e7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_short</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_short</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="81" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="81" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga306b81a4a7da48766503031f9531fa0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_int</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_int</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="82" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="82" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga1ca96ca1ba24d8af1e193edf80683740" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_long</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_long</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="83" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="83" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga98a73654857bf0c3ebf3d45d9db0958a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_u8</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_u8</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="85" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="85" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga73ceb26a16495733dd229c033798fea2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_u16</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_u16</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="86" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="86" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga1fd48fb65ef16139e8f3de4226f7927a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_u32</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_u32</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="87" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="87" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga374653912823b6ebaec4c1af7b2df77b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_u64</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_u64</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="88" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="88" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga3ed7405e0967a21111a9b7e500d7106b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_i8</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_i8</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="89" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="89" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga6c8e0b2f8b5b19350cf04af149cdcf28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_i16</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_i16</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="90" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="90" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga67e5f09cc2c38dc2baee7d1c083c9f40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_i32</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_i32</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="91" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="91" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga230413607e7e0286df434152f68d661c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_i64</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_i64</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="92" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="92" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gac002b82458f1d4d2901bc3fb38a38b8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_size</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_size</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="94" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="94" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gad97f192c4accdb7969af133ec18b2cca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_ptr</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_ptr</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="95" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="95" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga0b5aa409ff658b1163a96a0358ffb825" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_float</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_float</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="97" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="97" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gab9cd79d35297cd3b3e8f9852e839f13b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_double</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_double</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="98" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="98" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gac96cb81bc1a0c6ffacc9d7a1f78e66c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t SUTLHash_string</definition>
+        <argsstring>(const void *v)</argsstring>
+        <name>SUTLHash_string</name>
+        <param>
+          <type>const void *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="100" column="8" declfile="include/Shroon/Utils/HashUtils.h" declline="100" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga529baa9c66b5aaa27a2056bc5aed5cff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_uchar</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_uchar</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="102" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="102" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga23d3e7646f975cf9c73998745dffca91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_ushort</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_ushort</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="103" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="103" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga1fd9e5b633cd6f3b2c506c3e8d9ae8e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_uint</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_uint</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="104" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="104" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gaeece0dfd62664b8ae4dfd842fcf854db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_ulong</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_ulong</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="105" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="105" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga1a47e3167f69a61ec370ecd99af66e84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_char</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_char</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="106" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="106" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga4f6482a7229dcd6e316c3ee560aa5311" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_short</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_short</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="107" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="107" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga430f1dc99de7a4aaae7a46269117f4bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_int</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_int</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="108" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="108" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga48b2bfa96d6106a4bf2885e7cabdd458" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_long</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_long</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="109" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="109" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga260bf71ff0a158ef1a3e7edc96f2bb75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_u8</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_u8</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="111" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="111" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga4d95c5221ed20481b383be95ef24af3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_u16</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_u16</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="112" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="112" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gad87b1532ede0edc2bd850ace43a47c98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_u32</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_u32</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="113" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="113" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga77fc950044ad8ff7986dd27e9b0b193a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_u64</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_u64</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="114" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="114" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga69cbefde51c1317f4469959f7f68f426" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_i8</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_i8</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="115" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="115" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga336b25daf53076b39888f3d6f7e0d41e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_i16</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_i16</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="116" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="116" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga482a74d7f3c2e84e5e3fefb231147e53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_i32</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_i32</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="117" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="117" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gaddb7d6aa7f62bbb8282be22920f4aa7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_i64</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_i64</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="118" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="118" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gabd6e2af08fcb5bb656410dae07a80482" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_size</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_size</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="120" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="120" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga4143b88cabf1fcb19a5c9b05db8fc36c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_ptr</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_ptr</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="121" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="121" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga21e50a76c638bab4a23dd9514adcd2f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_float</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_float</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="123" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="123" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga53d8e0c01eaf9d7da9ae02d4b4679a10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_double</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_double</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="124" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="124" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga19e50476f4e9ad5eab88e33355c177ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SUTLCmp_string</definition>
+        <argsstring>(const void *p0, const void *p1)</argsstring>
+        <name>SUTLCmp_string</name>
+        <param>
+          <type>const void *</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="126" column="5" declfile="include/Shroon/Utils/HashUtils.h" declline="126" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga7eccfa58bd7a297fdd9197c87fd73ce3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__String_1gaee11319e0656cc52c3e85c02426acf64" kindref="member">SUTLString</ref></type>
+        <definition>SUTLString SUTL_InternalStringSlice</definition>
+        <argsstring>(SUTLString str, size_t at, size_t size)</argsstring>
+        <name>SUTL_InternalStringSlice</name>
+        <param>
+          <type><ref refid="group__String_1gaee11319e0656cc52c3e85c02426acf64" kindref="member">SUTLString</ref></type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>at</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/String.h" line="222" column="12" declfile="include/Shroon/Utils/String.h" declline="222" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gad453cf16699f219b8da69eaff9d3705a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* SUTL_InternalVectorNew</definition>
+        <argsstring>(size_t elemsize)</argsstring>
+        <name>SUTL_InternalVectorNew</name>
+        <param>
+          <type>size_t</type>
+          <declname>elemsize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="199" column="7" declfile="include/Shroon/Utils/Vector.h" declline="199" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gac0a546eaa51c0f6c205ef677009fd068" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SUTL_InternalVectorReserve</definition>
+        <argsstring>(void **v, size_t size)</argsstring>
+        <name>SUTL_InternalVectorReserve</name>
+        <param>
+          <type>void **</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="200" column="6" declfile="include/Shroon/Utils/Vector.h" declline="200" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga4152fa4b4c13e98c79aee83286a0df2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SUTL_InternalVectorResize</definition>
+        <argsstring>(void **v, size_t size)</argsstring>
+        <name>SUTL_InternalVectorResize</name>
+        <param>
+          <type>void **</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="201" column="6" declfile="include/Shroon/Utils/Vector.h" declline="201" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga7d5a5cdfcfc7eea960d42d40a69b4284" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* SUTL_InternalVectorInsertN</definition>
+        <argsstring>(void **v, size_t at, const void *ptr, size_t count)</argsstring>
+        <name>SUTL_InternalVectorInsertN</name>
+        <param>
+          <type>void **</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>at</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="202" column="7" declfile="include/Shroon/Utils/Vector.h" declline="202" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga705007f5fb3e4d4ad41a7cdaabede1f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SUTL_InternalVectorEraseN</definition>
+        <argsstring>(void **v, size_t at, size_t count)</argsstring>
+        <name>SUTL_InternalVectorEraseN</name>
+        <param>
+          <type>void **</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>at</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="203" column="6" declfile="include/Shroon/Utils/Vector.h" declline="203" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__Internal_1gadd58e04c8c8e86439491e77c83bdcdec" prot="public" static="no">
+        <name>SUTL_HASHFN_DECL</name>
+        <param><defname>suffix</defname></param>
+        <initializer>size_t SUTLHash_##suffix(const void * v);</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="73" column="9" bodyfile="include/Shroon/Utils/HashUtils.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Internal_1gab72fe410a5d71713910a815400f8c702" prot="public" static="no">
+        <name>SUTL_CMPFN_DECL</name>
+        <param><defname>suffix</defname></param>
+        <initializer>int SUTLCmp_##suffix(const void * p0, const void * p1);</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="74" column="9" bodyfile="include/Shroon/Utils/HashUtils.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>For internal use of the library. Don&apos;t use these directly. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

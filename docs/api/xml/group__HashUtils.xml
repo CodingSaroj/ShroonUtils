@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__HashUtils" kind="group">
+    <compoundname>HashUtils</compoundname>
+    <title>HashUtils</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__HashUtils_1ga05c692e44e2c64bd47d2d0eb785676ba" prot="public" static="no">
+        <name>SUTL_HASHFN</name>
+        <param><defname>suffix</defname></param>
+        <initializer>SUTLHash_##suffix</initializer>
+        <briefdescription>
+<para>Hash function with suffix <computeroutput>suffix</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="60" column="9" bodyfile="include/Shroon/Utils/HashUtils.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__HashUtils_1gadca73bc2ef95a38f7c4103886a5aeb46" prot="public" static="no">
+        <name>SUTL_CMPFN</name>
+        <param><defname>suffix</defname></param>
+        <initializer>SUTLCmp_##suffix</initializer>
+        <briefdescription>
+<para>Compare function with suffix <computeroutput>suffix</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/HashUtils.h" line="65" column="9" bodyfile="include/Shroon/Utils/HashUtils.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file contains hashing and compare functions for integer types, floating point types and string which can be used with <computeroutput><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref></computeroutput> and <computeroutput><ref refid="structSUTLHashset" kindref="compound">SUTLHashset</ref></computeroutput>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>These functions have suffixes which tells what type they target.</para>
+<para>The following table shows which suffix targets which type: <verbatim>   Suffix    |   Type (const is implied here)
+-------------+-------------------------------
+   uchar     |   unsigned char
+   ushort    |   unsigned short
+   uint      |   unsigned int
+   ulong     |   unsigned long
+   char      |   signed char
+   short     |   signed short
+   int       |   signed int
+   long      |   signed long
+   u8        |   uint8_t
+   u16       |   uint16_t
+   u32       |   uint32_t
+   u64       |   uint64_t
+   i8        |   int8_t
+   i16       |   int16_t
+   i32       |   int32_t
+   i64       |   int64_t
+   float     |   float
+   double    |   double
+   size      |   size_t
+   ptr       |   void *
+   string    |   char *
+</verbatim> </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

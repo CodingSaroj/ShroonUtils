@@ -1,0 +1,539 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__Vector" kind="group">
+    <compoundname>Vector</compoundname>
+    <title>Vector</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__Vector_1gaa3cc5bdcc6ded013a2ff14cb60baa8af" prot="public" static="no">
+        <name>SUTLVectorSize</name>
+        <param><defname>v</defname></param>
+        <initializer>(*((size_t *)v - 3))</initializer>
+        <briefdescription>
+<para>Gets the size of v. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to get the size of. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="47" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1ga064c00c2c55489b35015b003f39229d6" prot="public" static="no">
+        <name>SUTLVectorCapacity</name>
+        <param><defname>v</defname></param>
+        <initializer>(*((size_t *)v - 2))</initializer>
+        <briefdescription>
+<para>Gets the capacity of v. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to get the capacity of. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="54" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1gabeab74fc632a6cfdb4c07944cb5aa842" prot="public" static="no">
+        <name>SUTLVectorNew</name>
+        <param><defname>t</defname></param>
+        <initializer>((t *)<ref refid="group__Internal_1gad453cf16699f219b8da69eaff9d3705a" kindref="member">SUTL_InternalVectorNew</ref>(sizeof(t)))</initializer>
+        <briefdescription>
+<para>Creates a new vector of type <computeroutput>t</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of element which the vector will store.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <computeroutput>t *</computeroutput> which points to index 0 in the vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="63" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1ga279b90bde3ad8670025311d68c9d20b0" prot="public" static="no">
+        <name>SUTLVectorFree</name>
+        <param><defname>v</defname></param>
+        <initializer><ref refid="Common_8h_1a1ef8ab546b7c0782add31a64662a9c87" kindref="member">SHRN_FREE</ref>((size_t *)v - 3)</initializer>
+        <briefdescription>
+<para>Frees a vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to free. This must be a pointer returned from <computeroutput>SUTLVectorNew</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="70" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1gaee3ca7e23b775c3e7e89e66386b49e69" prot="public" static="no">
+        <name>SUTLVectorReserve</name>
+        <param><defname>v</defname></param>
+        <param><defname>size</defname></param>
+        <initializer><ref refid="group__Internal_1gac0a546eaa51c0f6c205ef677009fd068" kindref="member">SUTL_InternalVectorReserve</ref>((void **)&amp;v, size)</initializer>
+        <briefdescription>
+<para>Reserves memory for <computeroutput>size</computeroutput> elements in <computeroutput>v</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to reserve memory in. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements to reserve memory for. Must be greater than or equal to size of <computeroutput>v</computeroutput>, otherwise nothing is changed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="79" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1ga9408fda84a35c45b047a7af993a27e7b" prot="public" static="no">
+        <name>SUTLVectorResize</name>
+        <param><defname>v</defname></param>
+        <param><defname>size</defname></param>
+        <initializer><ref refid="group__Internal_1ga4152fa4b4c13e98c79aee83286a0df2d" kindref="member">SUTL_InternalVectorResize</ref>((void **)&amp;v, size)</initializer>
+        <briefdescription>
+<para>Resizes <computeroutput>v</computeroutput> to <computeroutput>size</computeroutput> elements. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to resize. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new size of the vector. Doesn&apos;t affect the capacity of vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="87" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1gab397c31e071773ac38692d899ec15024" prot="public" static="no">
+        <name>SUTLVectorInsert</name>
+        <param><defname>v</defname></param>
+        <param><defname>at</defname></param>
+        <param><defname>elem</defname></param>
+        <initializer><ref refid="group__Internal_1ga7d5a5cdfcfc7eea960d42d40a69b4284" kindref="member">SUTL_InternalVectorInsertN</ref>((void **)&amp;v, at, &amp;elem, 1)</initializer>
+        <briefdescription>
+<para>Inserts <computeroutput>elem</computeroutput> at index <computeroutput>at</computeroutput> into <computeroutput>v</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to insert <computeroutput>elem</computeroutput> in. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>at</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index to insert the element at. This will be the index of the new element. Must be less than or equal to the size of <computeroutput>v</computeroutput>, otherwise the insertion fails and <computeroutput>NULL</computeroutput> is returned. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>elem</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The element to insert inside <computeroutput>v</computeroutput>. Must be an lvalue.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The pointer to the inserted element. If insertion failed, it is <computeroutput>NULL</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="99" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1ga5f5a4c0c864fe78a112ca91117c6586d" prot="public" static="no">
+        <name>SUTLVectorInsertN</name>
+        <param><defname>v</defname></param>
+        <param><defname>at</defname></param>
+        <param><defname>ptr</defname></param>
+        <param><defname>count</defname></param>
+        <initializer><ref refid="group__Internal_1ga7d5a5cdfcfc7eea960d42d40a69b4284" kindref="member">SUTL_InternalVectorInsertN</ref>((void **)&amp;v, at, ptr, count)</initializer>
+        <briefdescription>
+<para>Inserts <computeroutput>count</computeroutput> elements from <computeroutput>ptr</computeroutput> at index <computeroutput>at</computeroutput> into <computeroutput>v</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to insert <computeroutput>elem</computeroutput> in. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>at</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index to insert the elements at. This will be the index of the first new element. Must be less than or equal to the size of <computeroutput>v</computeroutput>, otherwise the insertion fails and <computeroutput>NULL</computeroutput> is returned. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the elements which will be inserted. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements to insert.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The pointer to the first inserted element. If insertion failed, it is <computeroutput>NULL</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="113" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1ga27045ec866ed199548ef1ead7a4fe142" prot="public" static="no">
+        <name>SUTLVectorErase</name>
+        <param><defname>v</defname></param>
+        <param><defname>at</defname></param>
+        <initializer><ref refid="group__Internal_1ga705007f5fb3e4d4ad41a7cdaabede1f0" kindref="member">SUTL_InternalVectorEraseN</ref>((void **)&amp;v, at, 1)</initializer>
+        <briefdescription>
+<para>Erases element at index <computeroutput>at</computeroutput> in <computeroutput>v</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to erase element from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>at</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of element to erase. Must be less than the size of <computeroutput>v</computeroutput>, otherwise nothing is changed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="122" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1ga4c83deb0b4f089f7b8d36a4a668a513d" prot="public" static="no">
+        <name>SUTLVectorEraseN</name>
+        <param><defname>v</defname></param>
+        <param><defname>at</defname></param>
+        <param><defname>count</defname></param>
+        <initializer><ref refid="group__Internal_1ga705007f5fb3e4d4ad41a7cdaabede1f0" kindref="member">SUTL_InternalVectorEraseN</ref>((void **)&amp;v, at, count)</initializer>
+        <briefdescription>
+<para>Erases <computeroutput>count</computeroutput> elements starting from <computeroutput>at</computeroutput> in <computeroutput>v</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to erase element from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>at</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of first element to erase. Must be less than <computeroutput>size of v - count</computeroutput>, otherwise nothing is changed. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements to erase. Must be less than or equal to size of <computeroutput>v</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="132" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1gaaf6809c41fbc904c2de7b3fe59b20acf" prot="public" static="no">
+        <name>SUTLVectorPush</name>
+        <param><defname>v</defname></param>
+        <param><defname>elem</defname></param>
+        <initializer><ref refid="group__Vector_1gab397c31e071773ac38692d899ec15024" kindref="member">SUTLVectorInsert</ref>(v, <ref refid="group__Vector_1gaa3cc5bdcc6ded013a2ff14cb60baa8af" kindref="member">SUTLVectorSize</ref>(v), elem)</initializer>
+        <briefdescription>
+<para>Pushes <computeroutput>elem</computeroutput> at the end of <computeroutput>v</computeroutput>. Synonymous to <computeroutput>SUTLInsert</computeroutput> with <computeroutput>at</computeroutput> as size of <computeroutput>v</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to push <computeroutput>elem</computeroutput> in. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>elem</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The element to push to <computeroutput>v</computeroutput>. Must be an lvalue.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The pointer to the inserted element. If insertion failed, it is <computeroutput>NULL</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="143" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1ga5267fe5032e9c8dbe8601b7d7b9bbeb8" prot="public" static="no">
+        <name>SUTLVectorPushN</name>
+        <param><defname>v</defname></param>
+        <param><defname>ptr</defname></param>
+        <param><defname>count</defname></param>
+        <initializer><ref refid="group__Vector_1ga5f5a4c0c864fe78a112ca91117c6586d" kindref="member">SUTLVectorInsertN</ref>(v, <ref refid="group__Vector_1gaa3cc5bdcc6ded013a2ff14cb60baa8af" kindref="member">SUTLVectorSize</ref>(v), ptr, count)</initializer>
+        <briefdescription>
+<para>Pushes <computeroutput>count</computeroutput> elements from <computeroutput>ptr</computeroutput> to the end of <computeroutput>v</computeroutput>. Synonymous to <computeroutput>SUTLInsertN</computeroutput> with <computeroutput>at</computeroutput> as size of <computeroutput>v</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to push <computeroutput>elem</computeroutput> in. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the elements which will be inserted. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements to push.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The pointer to the first inserted element. If insertion failed, it is <computeroutput>NULL</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="155" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1gaa8b7538003a48a9378ca41f7ff4d9b99" prot="public" static="no">
+        <name>SUTLVectorPop</name>
+        <param><defname>v</defname></param>
+        <initializer><ref refid="group__Vector_1ga27045ec866ed199548ef1ead7a4fe142" kindref="member">SUTLVectorErase</ref>(v, <ref refid="group__Vector_1gaa3cc5bdcc6ded013a2ff14cb60baa8af" kindref="member">SUTLVectorSize</ref>(v) ? <ref refid="group__Vector_1gaa3cc5bdcc6ded013a2ff14cb60baa8af" kindref="member">SUTLVectorSize</ref>(v) - 1 : 0)</initializer>
+        <briefdescription>
+<para>Pops element from the back of <computeroutput>v</computeroutput>. Synonymous to SUTLErase with <computeroutput>at</computeroutput> as size of <computeroutput>v</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to pop element from. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="163" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1ga9d91ac544f3bb384299364a26bbf4f6e" prot="public" static="no">
+        <name>SUTLVectorPopN</name>
+        <param><defname>v</defname></param>
+        <param><defname>count</defname></param>
+        <initializer><ref refid="group__Vector_1ga4c83deb0b4f089f7b8d36a4a668a513d" kindref="member">SUTLVectorEraseN</ref>(v, <ref refid="group__Vector_1gaa3cc5bdcc6ded013a2ff14cb60baa8af" kindref="member">SUTLVectorSize</ref>(v) &gt;= count ? <ref refid="group__Vector_1gaa3cc5bdcc6ded013a2ff14cb60baa8af" kindref="member">SUTLVectorSize</ref>(v) - count : 0, count)</initializer>
+        <briefdescription>
+<para>Pops <computeroutput>count</computeroutput> elements from the back of <computeroutput>v</computeroutput>. Synonymous to <computeroutput>SUTLEraseN</computeroutput> with <computeroutput>at</computeroutput> as size of <computeroutput>v</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to pop elements from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements to pop. Must be less than or equal to size of <computeroutput>v</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="172" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Vector_1gad0919d2db87a1462473463df60118f8e" prot="public" static="no">
+        <name>SUTLVectorEach</name>
+        <param><defname>t</defname></param>
+        <param><defname>v</defname></param>
+        <param><defname>name</defname></param>
+        <param><defname>expr</defname></param>
+        <initializer>    {\
+        size_t i = 0;\
+        for (i = 0; i &lt; <ref refid="group__Vector_1gaa3cc5bdcc6ded013a2ff14cb60baa8af" kindref="member">SUTLVectorSize</ref>(v); i++)\
+        {\
+            t * name = v + i;\
+            expr\
+        }\
+    }</initializer>
+        <briefdescription>
+<para>Executes <computeroutput>expr</computeroutput> for each element of <computeroutput>v</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of element stored in <computeroutput>v</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to iterate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the variable in which current element will be stored. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code block to execute for each element. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Vector.h" line="182" column="9" bodyfile="include/Shroon/Utils/Vector.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A data structure similar to the <computeroutput>std::vector</computeroutput> from C++ STL. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It has a layout similar to the following struct where t is the element type: <verbatim>struct SUTLVector
+{
+    size_t Size;
+    size_t Capacity;
+    size_t Elemsize;
+    t[] Data;
+};
+</verbatim></para>
+<para>The whole struct is dynamically allocated and the pointer to <computeroutput>Data</computeroutput> is returned to the user so the subscript operator works properly.</para>
+<para>This implementation is inspired from stretchy_buffer in stb. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

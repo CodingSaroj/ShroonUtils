@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_565e261f207ba3d0a4ed6de21568f6bc" kind="dir">
+    <compoundname>include/Shroon</compoundname>
+    <innerdir refid="dir_ca205ad7951e7bc7d5c5665cba5a6b16">include/Shroon/Utils</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Shroon/"/>
+  </compounddef>
+</doxygen>

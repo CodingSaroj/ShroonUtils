@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structSUTLHashmap" kind="struct" language="C++" prot="public">
+    <compoundname>SUTLHashmap</compoundname>
+    <includes refid="Hashmap_8h" local="no">Hashmap.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="group__Internal_1ga0444d7bd44541ad044d39b8fef2e1413" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SUTLHashmap::Size</definition>
+        <argsstring></argsstring>
+        <name>Size</name>
+        <briefdescription>
+<para>The number of entries in the hashmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="58" column="12" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SUTLHashmap::KeySize</definition>
+        <argsstring></argsstring>
+        <name>KeySize</name>
+        <briefdescription>
+<para>The size of the key type of the hashmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="63" column="12" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga1e9900641773c23ace17a4ceb5b8f627" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t SUTLHashmap::ValueSize</definition>
+        <argsstring></argsstring>
+        <name>ValueSize</name>
+        <briefdescription>
+<para>The size of the value type the hashmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="68" column="12" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SUTLHashmap::ParamK</definition>
+        <argsstring></argsstring>
+        <name>ParamK</name>
+        <briefdescription>
+<para>Don&apos;t access this directly. A pointer to key type. This is used to pass parameters to internal functions which allows passing rvalues to them. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="74" column="11" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga07590e21e707b6401a309af310a28e80" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* SUTLHashmap::ParamV</definition>
+        <argsstring></argsstring>
+        <name>ParamV</name>
+        <briefdescription>
+<para>Don&apos;t access this directly. A pointer to value type. This is used to pass parameters to internal functions which allows passing rvalues to them. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="80" column="11" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* SUTLHashmap::Keys[32]</definition>
+        <argsstring>[32]</argsstring>
+        <name>Keys</name>
+        <briefdescription>
+<para>Don&apos;t access this directly. An array of vector of <computeroutput>char</computeroutput> which stores the keys the hashmap. This is parallel to <computeroutput>Values</computeroutput>. It uses char so that the layout remains the same for hashmaps with different key types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="87" column="11" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga9c68d9179d6ee4d00ef0ce8ce75452ce" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* SUTLHashmap::Values[32]</definition>
+        <argsstring>[32]</argsstring>
+        <name>Values</name>
+        <briefdescription>
+<para>Don&apos;t access this directly. An array of vector of <computeroutput>char</computeroutput> which stores the keys the hashmap. This is parallel to <computeroutput>Keys</computeroutput>. It uses char so that the layout remains the same for hashmaps with different value types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="94" column="11" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1gae4e8125540c9b501dc4724b45a19ac2e" prot="public" static="no" mutable="no">
+        <type>size_t(*</type>
+        <definition>size_t( * SUTLHashmap::Hash) (const void *)</definition>
+        <argsstring>)(const void *)</argsstring>
+        <name>Hash</name>
+        <briefdescription>
+<para>The function pointer which hashes the key type of the hashmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="99" column="5" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__Internal_1ga1a5396ba8c67fa6594cc948171ebcd8d" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int( * SUTLHashmap::KeyComp) (const void *, const void *)</definition>
+        <argsstring>)(const void *, const void *)</argsstring>
+        <name>KeyComp</name>
+        <briefdescription>
+<para>The function pointer which compares two keys. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="104" column="5" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>It contains the state of a particular hashmap instance. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>size_t</label>
+      </node>
+      <node id="5">
+        <label>void *</label>
+      </node>
+      <node id="4">
+        <label>char *</label>
+      </node>
+      <node id="2">
+        <label>int(*)(const void *, const void *)</label>
+      </node>
+      <node id="1">
+        <label>SUTLHashmap</label>
+        <link refid="structSUTLHashmap"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+KeyComp</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+ValueSize</edgelabel>
+          <edgelabel>+KeySize</edgelabel>
+          <edgelabel>+Hash</edgelabel>
+          <edgelabel>+Size</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+Values</edgelabel>
+          <edgelabel>+Keys</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+ParamV</edgelabel>
+          <edgelabel>+ParamK</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/Shroon/Utils/Hashmap.h" line="54" column="1" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="53" bodyend="105"/>
+    <listofallmembers>
+      <member refid="group__Internal_1gae4e8125540c9b501dc4724b45a19ac2e" prot="public" virt="non-virtual"><scope>SUTLHashmap</scope><name>Hash</name></member>
+      <member refid="group__Internal_1ga1a5396ba8c67fa6594cc948171ebcd8d" prot="public" virt="non-virtual"><scope>SUTLHashmap</scope><name>KeyComp</name></member>
+      <member refid="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" prot="public" virt="non-virtual"><scope>SUTLHashmap</scope><name>Keys</name></member>
+      <member refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" prot="public" virt="non-virtual"><scope>SUTLHashmap</scope><name>KeySize</name></member>
+      <member refid="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" prot="public" virt="non-virtual"><scope>SUTLHashmap</scope><name>ParamK</name></member>
+      <member refid="group__Internal_1ga07590e21e707b6401a309af310a28e80" prot="public" virt="non-virtual"><scope>SUTLHashmap</scope><name>ParamV</name></member>
+      <member refid="group__Internal_1ga0444d7bd44541ad044d39b8fef2e1413" prot="public" virt="non-virtual"><scope>SUTLHashmap</scope><name>Size</name></member>
+      <member refid="group__Internal_1ga9c68d9179d6ee4d00ef0ce8ce75452ce" prot="public" virt="non-virtual"><scope>SUTLHashmap</scope><name>Values</name></member>
+      <member refid="group__Internal_1ga1e9900641773c23ace17a4ceb5b8f627" prot="public" virt="non-virtual"><scope>SUTLHashmap</scope><name>ValueSize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

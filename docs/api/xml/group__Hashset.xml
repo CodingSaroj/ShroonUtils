@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__Hashset" kind="group">
+    <compoundname>Hashset</compoundname>
+    <title>Hashset</title>
+    <innerclass refid="structSUTLHashset" prot="public">SUTLHashset</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__Hashset_1ga2f886327776090cdf38edf73bf3069b1" prot="public" static="no">
+        <type>struct <ref refid="structSUTLHashset" kindref="compound">SUTLHashset</ref></type>
+        <definition>typedef struct SUTLHashset SUTLHashset</definition>
+        <argsstring></argsstring>
+        <name>SUTLHashset</name>
+        <briefdescription>
+<para>It contains the state of a particular hashset instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="90" column="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__Hashset_1ga51ae51e267e34395ed759e2e80f2bc9a" prot="public" static="no">
+        <name>SUTL_HASHSET_BUCKET_COUNT</name>
+        <initializer>32</initializer>
+        <briefdescription>
+<para>The number of buckets a <computeroutput><ref refid="structSUTLHashset" kindref="compound">SUTLHashset</ref></computeroutput> will have. If it is less than or equal to 0 then it is set to 32 which is also the default value if it is not set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>More buckets will decrease search time but data will be fragmented across locations in memory. This might cause cache misses and hence slow down accessing the entries.</para>
+<para>Less buckets will increase search time but data will be less fragmented across locations in memory. This will decrease cache misses and hence accessing the entries won&apos;t take much time.</para>
+<para>Choose this value according to your use case. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="50" column="13" bodyfile="include/Shroon/Utils/Hashset.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Hashset_1ga7fa595be869b590e5bb3ccf23aaf58a5" prot="public" static="no">
+        <name>SUTLHashsetNew</name>
+        <param><defname>tk</defname></param>
+        <param><defname>hash</defname></param>
+        <param><defname>cmp</defname></param>
+        <initializer><ref refid="group__Internal_1gafbaabac20c55b40b408db84f4f14e15d" kindref="member">SUTL_InternalHashsetNew</ref>(sizeof(tk), hash, cmp)</initializer>
+        <briefdescription>
+<para>Creates a new <computeroutput><ref refid="structSUTLHashset" kindref="compound">SUTLHashset</ref></computeroutput> with key type as <computeroutput>tk</computeroutput>, key hash function as <computeroutput>hash</computeroutput> and key compare function as <computeroutput>cmp</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key type for the hashmap. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hash</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A function of the signature <computeroutput>size_t(const void *)</computeroutput> that hashes <computeroutput>tk</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cmp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A function of signature <computeroutput>int(const void *, const void *)</computeroutput> that compares two <computeroutput>tk</computeroutput> s for equality. (Similar to the <computeroutput>==</computeroutput> operator)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <computeroutput><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref></computeroutput> created according to the parameters given. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="103" column="9" bodyfile="include/Shroon/Utils/Hashset.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Hashset_1ga28c551ad7ac5669c9391a1ad2dff886b" prot="public" static="no">
+        <name>SUTLHashsetFree</name>
+        <param><defname>hs</defname></param>
+        <initializer><ref refid="group__Internal_1ga09c7e73f38e4a49ec289ae9bb9dccf22" kindref="member">SUTL_InternalHashsetFree</ref>(&amp;hs)</initializer>
+        <briefdescription>
+<para>Frees a <computeroutput><ref refid="structSUTLHashset" kindref="compound">SUTLHashset</ref></computeroutput> which was created using <computeroutput>SUTLHashsetNew</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <computeroutput><ref refid="structSUTLHashset" kindref="compound">SUTLHashset</ref></computeroutput> to free. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="110" column="9" bodyfile="include/Shroon/Utils/Hashset.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Hashset_1gac9afbfba5b8b81076ee2dcc9f99f7a3a" prot="public" static="no">
+        <name>SUTLHashsetGet</name>
+        <param><defname>tk</defname></param>
+        <param><defname>hs</defname></param>
+        <param><defname>k</defname></param>
+        <initializer>(*(tk *)hs.ParamK = k, (tk *)<ref refid="group__Internal_1gabccfdb8686a25da98498c443d1917ff7" kindref="member">SUTL_InternalHashsetGet</ref>(&amp;hs))</initializer>
+        <briefdescription>
+<para>Gets entry with key <computeroutput>k</computeroutput> in <computeroutput>hs</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key type of <computeroutput>hs</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hashset to get from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key to search for.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <computeroutput>tk *</computeroutput> that points to the required entry. If <computeroutput>k</computeroutput> doesn&apos;t exist in <computeroutput>hs</computeroutput> then it is <computeroutput>NULL</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="122" column="9" bodyfile="include/Shroon/Utils/Hashset.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Hashset_1gaf9ae453af7915f01ddb61fe3bfbf4c41" prot="public" static="no">
+        <name>SUTLHashsetInsert</name>
+        <param><defname>tk</defname></param>
+        <param><defname>hs</defname></param>
+        <param><defname>k</defname></param>
+        <initializer>(*(tk *)hs.ParamK = k, (tk *)<ref refid="group__Internal_1ga768df52259019e1a8a75ebf71d80298a" kindref="member">SUTL_InternalHashsetInsert</ref>(&amp;hs))</initializer>
+        <briefdescription>
+<para>Inserts an entry with key <computeroutput>k</computeroutput> in <computeroutput>hs</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key type of <computeroutput>hs</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hashset to insert to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key to insert.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <computeroutput>tk *</computeroutput> that points to the inserted entry. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="133" column="9" bodyfile="include/Shroon/Utils/Hashset.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Hashset_1ga52aafb9cc020a39cc2dbf400e6f9126c" prot="public" static="no">
+        <name>SUTLHashsetErase</name>
+        <param><defname>tk</defname></param>
+        <param><defname>hs</defname></param>
+        <param><defname>k</defname></param>
+        <initializer>(*(tk *)hs.ParamK = k, <ref refid="group__Internal_1ga355752ded9d402929d3cdccfcd5ca94e" kindref="member">SUTL_InternalHashsetErase</ref>(&amp;hs))</initializer>
+        <briefdescription>
+<para>Erases an entry with key <computeroutput>k</computeroutput> in <computeroutput>hs</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key type of <computeroutput>hs</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hashset to erase from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key of the entry to erase. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="142" column="9" bodyfile="include/Shroon/Utils/Hashset.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Hashset_1gaca3737f214d8de94a00e7cd7dcfd6784" prot="public" static="no">
+        <name>SUTLHashsetEach</name>
+        <param><defname>tk</defname></param>
+        <param><defname>hs</defname></param>
+        <param><defname>name</defname></param>
+        <param><defname>expr</defname></param>
+        <initializer>    {\
+        size_t i, j;\
+        for (i = 0; i &lt; <ref refid="group__Hashset_1ga51ae51e267e34395ed759e2e80f2bc9a" kindref="member">SUTL_HASHSET_BUCKET_COUNT</ref>; i++)\
+        {\
+            for (j = 0; j &lt; <ref refid="group__Vector_1gaa3cc5bdcc6ded013a2ff14cb60baa8af" kindref="member">SUTLVectorSize</ref>(hs.Keys[i]) / hs.KeySize; j++)\
+            {\
+                tk * name = ((tk *)hs.Keys[i] + j);\
+                expr\
+            }\
+        }\
+    }</initializer>
+        <briefdescription>
+<para>Executes <computeroutput>expr</computeroutput> for every entry in <computeroutput>hs</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key type of <computeroutput>hs</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hashset to iterate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The prefix for current entry. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code block to execute for every entry. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashset.h" line="152" column="9" bodyfile="include/Shroon/Utils/Hashset.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A hashset implementation. This is similar to the <computeroutput>std::unordered_set</computeroutput> from C++ STL. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>NOTE: In case of hashset, the value itself acts as a key so, the entry contains just one variable that acts as both a key and a value. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

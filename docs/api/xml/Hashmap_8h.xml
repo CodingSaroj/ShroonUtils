@@ -1,0 +1,726 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="Hashmap_8h" kind="file" language="C++">
+    <compoundname>Hashmap.h</compoundname>
+    <includes refid="Common_8h" local="yes">Common.h</includes>
+    <includes refid="Vector_8h" local="yes">Vector.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>include/Shroon/Utils/Hashmap.h</label>
+        <link refid="Hashmap_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="7">
+        <label>ErrorHandler.h</label>
+        <link refid="ErrorHandler_8h"/>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="2">
+        <label>Common.h</label>
+        <link refid="Common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Vector.h</label>
+        <link refid="Vector_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structSUTLHashmap" prot="public">SUTLHashmap</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__Hashmap_1ga45c9cec4dcbfc86e40a0f157fb6a4672" prot="public" static="no">
+        <name>SUTL_HASHMAP_BUCKET_COUNT</name>
+        <initializer>32</initializer>
+        <briefdescription>
+<para>The number of buckets a <computeroutput><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref></computeroutput> will have. If it is less than or equal to 0 then it is set to 32 which is also the default value if it is not set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>More buckets will decrease search time but data will be fragmented across locations in memory. This might cause cache misses and hence slow down accessing the entries.</para>
+<para>Less buckets will increase search time but data will be less fragmented across locations in memory. This will decrease cache misses and hence accessing the entries won&apos;t take much time.</para>
+<para>Choose this value according to your use case. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="47" column="13" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Hashmap_1gae57d2d80986e5f18743c816b6374d239" prot="public" static="no">
+        <name>SUTLHashmapNew</name>
+        <param><defname>tk</defname></param>
+        <param><defname>tv</defname></param>
+        <param><defname>hash</defname></param>
+        <param><defname>cmp</defname></param>
+        <initializer><ref refid="group__Internal_1ga838cd0994f3f5e719990dc821f7225bd" kindref="member">SUTL_InternalHashmapNew</ref>(sizeof(tk), sizeof(tv), hash, cmp)</initializer>
+        <briefdescription>
+<para>Creates a new <computeroutput><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref></computeroutput> with key type as <computeroutput>tk</computeroutput>,value type as <computeroutput>v</computeroutput>, key hash function as <computeroutput>hash</computeroutput> and key compare function as <computeroutput>cmp</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key type for the hashmap. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value type for the hashmap. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hash</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A function of the signature <computeroutput>size_t(const void *)</computeroutput> that hashes <computeroutput>tk</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cmp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A function of signature <computeroutput>int(const void *, const void *)</computeroutput> that compares two <computeroutput>tk</computeroutput> s for equality. (Similar to the <computeroutput>==</computeroutput> operator)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <computeroutput><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref></computeroutput> created according to the parameters given. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="119" column="9" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Hashmap_1ga3c181db26f6215c15740c6f598cf670c" prot="public" static="no">
+        <name>SUTLHashmapFree</name>
+        <param><defname>hm</defname></param>
+        <initializer><ref refid="group__Internal_1gae1f724922eb49605dec643e00fcaf879" kindref="member">SUTL_InternalHashmapFree</ref>(&amp;hm)</initializer>
+        <briefdescription>
+<para>Frees a <computeroutput><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref></computeroutput> which was created using <computeroutput>SUTLHashmapNew</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <computeroutput><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref></computeroutput> to free. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="126" column="9" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Hashmap_1gab29acab7ea1d2b9e19da9b353756636f" prot="public" static="no">
+        <name>SUTLHashmapGet</name>
+        <param><defname>tk</defname></param>
+        <param><defname>tv</defname></param>
+        <param><defname>hm</defname></param>
+        <param><defname>k</defname></param>
+        <initializer>(*(tk *)hm.ParamK = k, (tv *)<ref refid="group__Internal_1ga58bef1a42620b7fc1e452bc54a1311c6" kindref="member">SUTL_InternalHashmapGet</ref>(&amp;hm))</initializer>
+        <briefdescription>
+<para>Gets a value assigned to <computeroutput>k</computeroutput> in <computeroutput>hm</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key type of <computeroutput>hm</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value type of <computeroutput>hm</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hashmap to get from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key to search for.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <computeroutput>tv *</computeroutput> that points to the required value. If <computeroutput>k</computeroutput> doesn&apos;t exist in <computeroutput>hm</computeroutput> then it is <computeroutput>NULL</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="139" column="9" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Hashmap_1gae119d9d923733dad43a31d2e1e90f412" prot="public" static="no">
+        <name>SUTLHashmapInsert</name>
+        <param><defname>tk</defname></param>
+        <param><defname>tv</defname></param>
+        <param><defname>hm</defname></param>
+        <param><defname>k</defname></param>
+        <param><defname>v</defname></param>
+        <initializer>(*(tk *)hm.ParamK = k, *(tv *)hm.ParamV = v, (tv *)<ref refid="group__Internal_1ga6633c998f782d19ce1a8e7cf90e9818c" kindref="member">SUTL_InternalHashmapInsert</ref>(&amp;hm))</initializer>
+        <briefdescription>
+<para>Inserts an entry with key <computeroutput>k</computeroutput> and value <computeroutput>v</computeroutput> in <computeroutput>hm</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key type of <computeroutput>hm</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value type of <computeroutput>hm</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hashmap to insert to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key to insert. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to insert.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <computeroutput>tv *</computeroutput> that points to the inserted value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="152" column="9" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Hashmap_1gad538de6c803e29f121ad114d52793d81" prot="public" static="no">
+        <name>SUTLHashmapErase</name>
+        <param><defname>tk</defname></param>
+        <param><defname>hm</defname></param>
+        <param><defname>k</defname></param>
+        <initializer>(*(tk *)hm.ParamK = k, <ref refid="group__Internal_1ga534e3f25e4dbeee073debc59e8a615f9" kindref="member">SUTL_InternalHashmapErase</ref>(&amp;hm))</initializer>
+        <briefdescription>
+<para>Erases an entry with key <computeroutput>k</computeroutput> in <computeroutput>hm</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key type of <computeroutput>hm</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hashmap to erase from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key of the entry to erase. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="161" column="9" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__Hashmap_1ga152bfc9f428630138516d92af96ea628" prot="public" static="no">
+        <name>SUTLHashmapEach</name>
+        <param><defname>tk</defname></param>
+        <param><defname>tv</defname></param>
+        <param><defname>hm</defname></param>
+        <param><defname>name</defname></param>
+        <param><defname>expr</defname></param>
+        <initializer>    {\
+        size_t i, j;\
+        for (i = 0; i &lt; <ref refid="group__Hashmap_1ga45c9cec4dcbfc86e40a0f157fb6a4672" kindref="member">SUTL_HASHMAP_BUCKET_COUNT</ref>; i++)\
+        {\
+            for (j = 0; j &lt; <ref refid="group__Vector_1gaa3cc5bdcc6ded013a2ff14cb60baa8af" kindref="member">SUTLVectorSize</ref>(hm.Keys[i]) / hm.KeySize; j++)\
+            {\
+                tk * name##_k = ((tk *)hm.Keys[i] + j);\
+                tv * name##_v = ((tv *)hm.Values[i] + j);\
+                expr\
+            }\
+        }\
+    }</initializer>
+        <briefdescription>
+<para>Executes <computeroutput>expr</computeroutput> for every entry in <computeroutput>hm</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key type of <computeroutput>hm</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value type of <computeroutput>hm</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hashmap to iterate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The prefix for current entry. Key will have suffix <computeroutput>_k</computeroutput> and value will have suffix <computeroutput>_v</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code block to execute for every entry. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="173" column="9" bodyfile="include/Shroon/Utils/Hashmap.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__Hashmap_1gaa45677f2a94818e781a6767211c10153" prot="public" static="no">
+        <type>struct <ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref></type>
+        <definition>typedef struct SUTLHashmap SUTLHashmap</definition>
+        <argsstring></argsstring>
+        <name>SUTLHashmap</name>
+        <briefdescription>
+<para>It contains the state of a particular hashmap instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="105" column="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__Internal_1ga838cd0994f3f5e719990dc821f7225bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref></type>
+        <definition>SUTLHashmap SUTL_InternalHashmapNew</definition>
+        <argsstring>(size_t keysize, size_t valuesize, size_t(*hash)(const void *), int(*keycomp)(const void *, const void *))</argsstring>
+        <name>SUTL_InternalHashmapNew</name>
+        <param>
+          <type>size_t</type>
+          <declname>keysize</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>valuesize</declname>
+        </param>
+        <param>
+          <type>size_t(*)(const void *)</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>int(*)(const void *, const void *)</type>
+          <declname>keycomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="194" column="13" declfile="include/Shroon/Utils/Hashmap.h" declline="194" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1gae1f724922eb49605dec643e00fcaf879" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SUTL_InternalHashmapFree</definition>
+        <argsstring>(SUTLHashmap *hm)</argsstring>
+        <name>SUTL_InternalHashmapFree</name>
+        <param>
+          <type><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref> *</type>
+          <declname>hm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="195" column="6" declfile="include/Shroon/Utils/Hashmap.h" declline="195" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga6633c998f782d19ce1a8e7cf90e9818c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* SUTL_InternalHashmapInsert</definition>
+        <argsstring>(SUTLHashmap *hm)</argsstring>
+        <name>SUTL_InternalHashmapInsert</name>
+        <param>
+          <type><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref> *</type>
+          <declname>hm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="196" column="7" declfile="include/Shroon/Utils/Hashmap.h" declline="196" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga534e3f25e4dbeee073debc59e8a615f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SUTL_InternalHashmapErase</definition>
+        <argsstring>(SUTLHashmap *hm)</argsstring>
+        <name>SUTL_InternalHashmapErase</name>
+        <param>
+          <type><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref> *</type>
+          <declname>hm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="197" column="6" declfile="include/Shroon/Utils/Hashmap.h" declline="197" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Internal_1ga58bef1a42620b7fc1e452bc54a1311c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* SUTL_InternalHashmapGet</definition>
+        <argsstring>(SUTLHashmap *hm)</argsstring>
+        <name>SUTL_InternalHashmapGet</name>
+        <param>
+          <type><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref> *</type>
+          <declname>hm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Shroon/Utils/Hashmap.h" line="198" column="7" declfile="include/Shroon/Utils/Hashmap.h" declline="198" declcolumn="7"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>2021<sp/>Saroj<sp/>Kumar.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SUTL_SUTL_HASHMAP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SUTL_SUTL_HASHMAP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Common_8h" kindref="compound">Common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Vector_8h" kindref="compound">Vector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>This<sp/>must<sp/>be<sp/>same<sp/>for<sp/>all<sp/>source<sp/>files<sp/>that<sp/>pass</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>SUTLHashmap<sp/>around.</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(SUTL_HASHMAP_BUCKET_COUNT)<sp/>||<sp/>SUTL_HASHMAP_BUCKET_COUNT<sp/>&lt;=<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="group__Hashmap_1ga45c9cec4dcbfc86e40a0f157fb6a4672" refkind="member"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SUTL_HASHMAP_BUCKET_COUNT<sp/>32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="structSUTLHashmap" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58" refid="group__Internal_1ga0444d7bd44541ad044d39b8fef2e1413" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="group__Internal_1ga0444d7bd44541ad044d39b8fef2e1413" kindref="member">Size</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" kindref="member">KeySize</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="group__Internal_1ga1e9900641773c23ace17a4ceb5b8f627" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="group__Internal_1ga1e9900641773c23ace17a4ceb5b8f627" kindref="member">ValueSize</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" kindref="member">ParamK</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="group__Internal_1ga07590e21e707b6401a309af310a28e80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__Internal_1ga07590e21e707b6401a309af310a28e80" kindref="member">ParamV</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" kindref="member">Keys</ref>[<ref refid="group__Hashmap_1ga45c9cec4dcbfc86e40a0f157fb6a4672" kindref="member">SUTL_HASHMAP_BUCKET_COUNT</ref>];</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="group__Internal_1ga9c68d9179d6ee4d00ef0ce8ce75452ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__Internal_1ga9c68d9179d6ee4d00ef0ce8ce75452ce" kindref="member">Values</ref>[<ref refid="group__Hashmap_1ga45c9cec4dcbfc86e40a0f157fb6a4672" kindref="member">SUTL_HASHMAP_BUCKET_COUNT</ref>];</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="group__Internal_1gae4e8125540c9b501dc4724b45a19ac2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>size_t(<sp/>*<sp/><ref refid="group__Internal_1gae4e8125540c9b501dc4724b45a19ac2e" kindref="member">Hash</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="group__Internal_1ga1a5396ba8c67fa6594cc948171ebcd8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>int(<sp/>*<sp/><ref refid="group__Internal_1ga1a5396ba8c67fa6594cc948171ebcd8d" kindref="member">KeyComp</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}<sp/><ref refid="group__Hashmap_1gaa45677f2a94818e781a6767211c10153" kindref="member">SUTLHashmap</ref>;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="group__Hashmap_1gae57d2d80986e5f18743c816b6374d239" refkind="member"><highlight class="preprocessor">#define<sp/>SUTLHashmapNew(tk,<sp/>tv,<sp/>hash,<sp/>cmp)<sp/><sp/><sp/><sp/><sp/><sp/>SUTL_InternalHashmapNew(sizeof(tk),<sp/>sizeof(tv),<sp/>hash,<sp/>cmp)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="group__Hashmap_1ga3c181db26f6215c15740c6f598cf670c" refkind="member"><highlight class="preprocessor">#define<sp/>SUTLHashmapFree(hm)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SUTL_InternalHashmapFree(&amp;hm)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="group__Hashmap_1gab29acab7ea1d2b9e19da9b353756636f" refkind="member"><highlight class="preprocessor">#define<sp/>SUTLHashmapGet(tk,<sp/>tv,<sp/>hm,<sp/>k)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*(tk<sp/>*)hm.ParamK<sp/>=<sp/>k,<sp/>(tv<sp/>*)SUTL_InternalHashmapGet(&amp;hm))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="group__Hashmap_1gae119d9d923733dad43a31d2e1e90f412" refkind="member"><highlight class="preprocessor">#define<sp/>SUTLHashmapInsert(tk,<sp/>tv,<sp/>hm,<sp/>k,<sp/>v)<sp/><sp/><sp/><sp/>(*(tk<sp/>*)hm.ParamK<sp/>=<sp/>k,<sp/>*(tv<sp/>*)hm.ParamV<sp/>=<sp/>v,<sp/>(tv<sp/>*)SUTL_InternalHashmapInsert(&amp;hm))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="group__Hashmap_1gad538de6c803e29f121ad114d52793d81" refkind="member"><highlight class="preprocessor">#define<sp/>SUTLHashmapErase(tk,<sp/>hm,<sp/>k)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*(tk<sp/>*)hm.ParamK<sp/>=<sp/>k,<sp/>SUTL_InternalHashmapErase(&amp;hm))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="group__Hashmap_1ga152bfc9f428630138516d92af96ea628" refkind="member"><highlight class="preprocessor">#define<sp/>SUTLHashmapEach(tk,<sp/>tv,<sp/>hm,<sp/>name,<sp/>expr)<sp/>\</highlight></codeline>
+<codeline lineno="174"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{\</highlight></codeline>
+<codeline lineno="175"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size_t<sp/>i,<sp/>j;\</highlight></codeline>
+<codeline lineno="176"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>SUTL_HASHMAP_BUCKET_COUNT;<sp/>i++)\</highlight></codeline>
+<codeline lineno="177"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{\</highlight></codeline>
+<codeline lineno="178"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>SUTLVectorSize(hm.Keys[i])<sp/>/<sp/>hm.KeySize;<sp/>j++)\</highlight></codeline>
+<codeline lineno="179"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{\</highlight></codeline>
+<codeline lineno="180"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tk<sp/>*<sp/>name##_k<sp/>=<sp/>((tk<sp/>*)hm.Keys[i]<sp/>+<sp/>j);\</highlight></codeline>
+<codeline lineno="181"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tv<sp/>*<sp/>name##_v<sp/>=<sp/>((tv<sp/>*)hm.Values[i]<sp/>+<sp/>j);\</highlight></codeline>
+<codeline lineno="182"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>expr\</highlight></codeline>
+<codeline lineno="183"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}\</highlight></codeline>
+<codeline lineno="184"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}\</highlight></codeline>
+<codeline lineno="185"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref><sp/><ref refid="group__Internal_1ga838cd0994f3f5e719990dc821f7225bd" kindref="member">SUTL_InternalHashmapNew</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>keysize,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>valuesize,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">(<sp/>*<sp/>hash)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*),<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>(<sp/>*<sp/>keycomp)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*));</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__Internal_1gae1f724922eb49605dec643e00fcaf879" kindref="member">SUTL_InternalHashmapFree</ref>(<ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref><sp/>*<sp/>hm);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__Internal_1ga6633c998f782d19ce1a8e7cf90e9818c" kindref="member">SUTL_InternalHashmapInsert</ref>(<ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref><sp/>*<sp/>hm);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__Internal_1ga534e3f25e4dbeee073debc59e8a615f9" kindref="member">SUTL_InternalHashmapErase</ref>(<ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref><sp/>*<sp/>hm);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__Internal_1ga58bef1a42620b7fc1e452bc54a1311c6" kindref="member">SUTL_InternalHashmapGet</ref>(<ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref><sp/>*<sp/>hm);</highlight></codeline>
+<codeline lineno="203"><highlight class="preprocessor">#ifdef<sp/>SUTL_IMPLEMENTATION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref><sp/><ref refid="group__Internal_1ga838cd0994f3f5e719990dc821f7225bd" kindref="member">SUTL_InternalHashmapNew</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>keysize,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>valuesize,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">(<sp/>*<sp/>hash)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*),<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>(<sp/>*<sp/>keycomp)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*))</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref><sp/>hm;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Initialize<sp/>the<sp/>members<sp/>of<sp/>`hm`.</highlight></codeline>
+<codeline lineno="210"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hm.<ref refid="group__Internal_1ga0444d7bd44541ad044d39b8fef2e1413" kindref="member">Size</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hm.<ref refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" kindref="member">KeySize</ref><sp/>=<sp/>keysize;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hm.<ref refid="group__Internal_1ga1e9900641773c23ace17a4ceb5b8f627" kindref="member">ValueSize</ref><sp/>=<sp/>valuesize;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hm.<ref refid="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" kindref="member">ParamK</ref><sp/>=<sp/><ref refid="group__Vector_1gabeab74fc632a6cfdb4c07944cb5aa842" kindref="member">SUTLVectorNew</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hm.<ref refid="group__Internal_1ga07590e21e707b6401a309af310a28e80" kindref="member">ParamV</ref><sp/>=<sp/><ref refid="group__Vector_1gabeab74fc632a6cfdb4c07944cb5aa842" kindref="member">SUTLVectorNew</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hm.<ref refid="group__Internal_1gae4e8125540c9b501dc4724b45a19ac2e" kindref="member">Hash</ref><sp/>=<sp/>hash;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hm.<ref refid="group__Internal_1ga1a5396ba8c67fa6594cc948171ebcd8d" kindref="member">KeyComp</ref><sp/>=<sp/>keycomp;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="220"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Allocate<sp/>enough<sp/>memory<sp/>to<sp/>store<sp/>1<sp/>key<sp/>and<sp/>1<sp/>value<sp/>in<sp/>`ParamK`<sp/>and<sp/>`ParamV`<sp/>respectively.</highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Vector_1ga9408fda84a35c45b047a7af993a27e7b" kindref="member">SUTLVectorResize</ref>(hm.<ref refid="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" kindref="member">ParamK</ref>,<sp/>hm.<ref refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" kindref="member">KeySize</ref>);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Vector_1ga9408fda84a35c45b047a7af993a27e7b" kindref="member">SUTLVectorResize</ref>(hm.<ref refid="group__Internal_1ga07590e21e707b6401a309af310a28e80" kindref="member">ParamV</ref>,<sp/>hm.<ref refid="group__Internal_1ga1e9900641773c23ace17a4ceb5b8f627" kindref="member">ValueSize</ref>);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Initialize<sp/>all<sp/>the<sp/>buckets.</highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="group__Hashmap_1ga45c9cec4dcbfc86e40a0f157fb6a4672" kindref="member">SUTL_HASHMAP_BUCKET_COUNT</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hm.<ref refid="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" kindref="member">Keys</ref>[i]<sp/>=<sp/><ref refid="group__Vector_1gabeab74fc632a6cfdb4c07944cb5aa842" kindref="member">SUTLVectorNew</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hm.<ref refid="group__Internal_1ga9c68d9179d6ee4d00ef0ce8ce75452ce" kindref="member">Values</ref>[i]<sp/>=<sp/><ref refid="group__Vector_1gabeab74fc632a6cfdb4c07944cb5aa842" kindref="member">SUTLVectorNew</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hm;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__Internal_1gae1f724922eb49605dec643e00fcaf879" kindref="member">SUTL_InternalHashmapFree</ref>(<ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref><sp/>*<sp/>hm)</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="244"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Free<sp/>all<sp/>the<sp/>buckets.</highlight></codeline>
+<codeline lineno="245"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="group__Hashmap_1ga45c9cec4dcbfc86e40a0f157fb6a4672" kindref="member">SUTL_HASHMAP_BUCKET_COUNT</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Vector_1ga279b90bde3ad8670025311d68c9d20b0" kindref="member">SUTLVectorFree</ref>(hm-&gt;<ref refid="group__Internal_1ga9c68d9179d6ee4d00ef0ce8ce75452ce" kindref="member">Values</ref>[i]);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Vector_1ga279b90bde3ad8670025311d68c9d20b0" kindref="member">SUTLVectorFree</ref>(hm-&gt;<ref refid="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" kindref="member">Keys</ref>[i]);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="253"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Free<sp/>the<sp/>memory<sp/>allocated<sp/>for<sp/>parameter<sp/>variables.</highlight></codeline>
+<codeline lineno="254"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Vector_1ga279b90bde3ad8670025311d68c9d20b0" kindref="member">SUTLVectorFree</ref>(hm-&gt;<ref refid="group__Internal_1ga07590e21e707b6401a309af310a28e80" kindref="member">ParamV</ref>);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Vector_1ga279b90bde3ad8670025311d68c9d20b0" kindref="member">SUTLVectorFree</ref>(hm-&gt;<ref refid="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" kindref="member">ParamK</ref>);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__Internal_1ga6633c998f782d19ce1a8e7cf90e9818c" kindref="member">SUTL_InternalHashmapInsert</ref>(<ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref><sp/>*<sp/>hm)</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="262"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Calculate<sp/>the<sp/>index<sp/>of<sp/>the<sp/>key<sp/>stored<sp/>in<sp/>`ParamK`.</highlight></codeline>
+<codeline lineno="263"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>hm-&gt;<ref refid="group__Internal_1gae4e8125540c9b501dc4724b45a19ac2e" kindref="member">Hash</ref>(hm-&gt;<ref refid="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" kindref="member">ParamK</ref>)<sp/>%<sp/><ref refid="group__Hashmap_1ga45c9cec4dcbfc86e40a0f157fb6a4672" kindref="member">SUTL_HASHMAP_BUCKET_COUNT</ref>;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hm-&gt;<ref refid="group__Internal_1ga0444d7bd44541ad044d39b8fef2e1413" kindref="member">Size</ref>++;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>value<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="273"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Check<sp/>if<sp/>the<sp/>entry<sp/>with<sp/>key<sp/>stored<sp/>in<sp/>`ParamK`<sp/>already<sp/>exists.</highlight></codeline>
+<codeline lineno="274"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="group__Vector_1gaa3cc5bdcc6ded013a2ff14cb60baa8af" kindref="member">SUTLVectorSize</ref>(hm-&gt;<ref refid="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" kindref="member">Keys</ref>[index])<sp/>/<sp/>hm-&gt;<ref refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" kindref="member">KeySize</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hm-&gt;<ref refid="group__Internal_1ga1a5396ba8c67fa6594cc948171ebcd8d" kindref="member">KeyComp</ref>(hm-&gt;<ref refid="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" kindref="member">ParamK</ref>,<sp/>hm-&gt;<ref refid="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" kindref="member">Keys</ref>[index]<sp/>+<sp/>i<sp/>*<sp/>hm-&gt;<ref refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" kindref="member">KeySize</ref>))</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="278"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Initialize<sp/>`value`<sp/>to<sp/>the<sp/>value<sp/>of<sp/>the<sp/>entry<sp/>that<sp/>already<sp/>exists.</highlight></codeline>
+<codeline lineno="279"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/>hm-&gt;<ref refid="group__Internal_1ga9c68d9179d6ee4d00ef0ce8ce75452ce" kindref="member">Values</ref>[index]<sp/>+<sp/>i<sp/>*<sp/>hm-&gt;<ref refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" kindref="member">KeySize</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="283"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>If<sp/>the<sp/>entry<sp/>already<sp/>exists<sp/>return<sp/>it,<sp/>otherwise<sp/>proceed<sp/>to<sp/>add<sp/>the<sp/>new<sp/>entry.</highlight></codeline>
+<codeline lineno="284"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(value)</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="289"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Push<sp/>the<sp/>new<sp/>key<sp/>at<sp/>the<sp/>end<sp/>of<sp/>the<sp/>bucket<sp/>with<sp/>index<sp/>`index`.</highlight></codeline>
+<codeline lineno="290"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Vector_1ga5267fe5032e9c8dbe8601b7d7b9bbeb8" kindref="member">SUTLVectorPushN</ref>(hm-&gt;<ref refid="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" kindref="member">Keys</ref>[index],<sp/>hm-&gt;<ref refid="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" kindref="member">ParamK</ref>,<sp/>hm-&gt;<ref refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" kindref="member">KeySize</ref>);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="294"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Push<sp/>the<sp/>new<sp/>value<sp/>at<sp/>the<sp/>end<sp/>of<sp/>the<sp/>bucket<sp/>with<sp/>index<sp/>`index`<sp/>and<sp/>return<sp/>only<sp/>the</highlight></codeline>
+<codeline lineno="295"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>value.</highlight></codeline>
+<codeline lineno="296"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__Vector_1ga5267fe5032e9c8dbe8601b7d7b9bbeb8" kindref="member">SUTLVectorPushN</ref>(hm-&gt;<ref refid="group__Internal_1ga9c68d9179d6ee4d00ef0ce8ce75452ce" kindref="member">Values</ref>[index],<sp/>hm-&gt;<ref refid="group__Internal_1ga07590e21e707b6401a309af310a28e80" kindref="member">ParamV</ref>,<sp/>hm-&gt;<ref refid="group__Internal_1ga1e9900641773c23ace17a4ceb5b8f627" kindref="member">ValueSize</ref>);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__Internal_1ga534e3f25e4dbeee073debc59e8a615f9" kindref="member">SUTL_InternalHashmapErase</ref>(<ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref><sp/>*<sp/>hm)</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="303"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Calculate<sp/>the<sp/>index<sp/>of<sp/>the<sp/>key<sp/>stored<sp/>in<sp/>`ParamK`.</highlight></codeline>
+<codeline lineno="304"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>hm-&gt;<ref refid="group__Internal_1gae4e8125540c9b501dc4724b45a19ac2e" kindref="member">Hash</ref>(hm-&gt;<ref refid="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" kindref="member">ParamK</ref>)<sp/>%<sp/><ref refid="group__Hashmap_1ga45c9cec4dcbfc86e40a0f157fb6a4672" kindref="member">SUTL_HASHMAP_BUCKET_COUNT</ref>;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="310"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Search<sp/>the<sp/>bucket<sp/>with<sp/>index<sp/>`index`<sp/>for<sp/>the<sp/>key<sp/>stored<sp/>in<sp/>`ParamK`.</highlight></codeline>
+<codeline lineno="311"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="group__Vector_1gaa3cc5bdcc6ded013a2ff14cb60baa8af" kindref="member">SUTLVectorSize</ref>(hm-&gt;<ref refid="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" kindref="member">Keys</ref>[index]);<sp/>i++)</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hm-&gt;<ref refid="group__Internal_1ga1a5396ba8c67fa6594cc948171ebcd8d" kindref="member">KeyComp</ref>(hm-&gt;<ref refid="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" kindref="member">ParamK</ref>,<sp/>hm-&gt;<ref refid="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" kindref="member">Keys</ref>[index]<sp/>+<sp/>i<sp/>*<sp/>hm-&gt;<ref refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" kindref="member">KeySize</ref>))</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="317"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Erase<sp/>the<sp/>key<sp/>and<sp/>the<sp/>value<sp/>from<sp/>the<sp/>bucket.</highlight></codeline>
+<codeline lineno="318"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Vector_1ga4c83deb0b4f089f7b8d36a4a668a513d" kindref="member">SUTLVectorEraseN</ref>(hm-&gt;<ref refid="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" kindref="member">Keys</ref>[index],<sp/>i<sp/>*<sp/>hm-&gt;<ref refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" kindref="member">KeySize</ref>,<sp/>hm-&gt;<ref refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" kindref="member">KeySize</ref>);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Vector_1ga4c83deb0b4f089f7b8d36a4a668a513d" kindref="member">SUTLVectorEraseN</ref>(hm-&gt;<ref refid="group__Internal_1ga9c68d9179d6ee4d00ef0ce8ce75452ce" kindref="member">Values</ref>[index],<sp/>i<sp/>*<sp/>hm-&gt;<ref refid="group__Internal_1ga1e9900641773c23ace17a4ceb5b8f627" kindref="member">ValueSize</ref>,<sp/>hm-&gt;<ref refid="group__Internal_1ga1e9900641773c23ace17a4ceb5b8f627" kindref="member">ValueSize</ref>);</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hm-&gt;<ref refid="group__Internal_1ga0444d7bd44541ad044d39b8fef2e1413" kindref="member">Size</ref>--;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__Internal_1ga58bef1a42620b7fc1e452bc54a1311c6" kindref="member">SUTL_InternalHashmapGet</ref>(<ref refid="structSUTLHashmap" kindref="compound">SUTLHashmap</ref><sp/>*<sp/>hm)</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="332"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Calculate<sp/>the<sp/>index<sp/>of<sp/>the<sp/>key<sp/>stored<sp/>in<sp/>`ParamK`.</highlight></codeline>
+<codeline lineno="333"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>hm-&gt;<ref refid="group__Internal_1gae4e8125540c9b501dc4724b45a19ac2e" kindref="member">Hash</ref>(hm-&gt;<ref refid="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" kindref="member">ParamK</ref>)<sp/>%<sp/><ref refid="group__Hashmap_1ga45c9cec4dcbfc86e40a0f157fb6a4672" kindref="member">SUTL_HASHMAP_BUCKET_COUNT</ref>;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="339"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Search<sp/>the<sp/>bucket<sp/>with<sp/>index<sp/>`index`<sp/>for<sp/>the<sp/>key<sp/>stored<sp/>in<sp/>`ParamK`.</highlight></codeline>
+<codeline lineno="340"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="group__Vector_1gaa3cc5bdcc6ded013a2ff14cb60baa8af" kindref="member">SUTLVectorSize</ref>(hm-&gt;<ref refid="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" kindref="member">Keys</ref>[index])<sp/>/<sp/>hm-&gt;<ref refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" kindref="member">KeySize</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hm-&gt;<ref refid="group__Internal_1ga1a5396ba8c67fa6594cc948171ebcd8d" kindref="member">KeyComp</ref>(hm-&gt;<ref refid="group__Internal_1gac4d1d87a1f1e556c7ffac96450ccbc9d" kindref="member">ParamK</ref>,<sp/>hm-&gt;<ref refid="group__Internal_1ga7bc16cdbe23073177259e6576aed4265" kindref="member">Keys</ref>[index]<sp/>+<sp/>i<sp/>*<sp/>hm-&gt;<ref refid="group__Internal_1ga0d7f2a8853cb0c70d184ffb54b3c5900" kindref="member">KeySize</ref>))</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="344"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Return<sp/>the<sp/>value.</highlight></codeline>
+<codeline lineno="345"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hm-&gt;<ref refid="group__Internal_1ga9c68d9179d6ee4d00ef0ce8ce75452ce" kindref="member">Values</ref>[index]<sp/>+<sp/>i<sp/>*<sp/>hm-&gt;<ref refid="group__Internal_1ga1e9900641773c23ace17a4ceb5b8f627" kindref="member">ValueSize</ref>;</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="349"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>If<sp/>the<sp/>search<sp/>fails<sp/>then<sp/>`NULL`<sp/>is<sp/>returned.</highlight></codeline>
+<codeline lineno="350"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/Shroon/Utils/Hashmap.h"/>
+  </compounddef>
+</doxygen>
