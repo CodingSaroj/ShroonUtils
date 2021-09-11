@@ -160,7 +160,7 @@
  *
  * @param v The vector to pop element from.
  */
-#define SUTLVectorPop(v)                        SUTLVectorErase(v, SUTLVectorSize(v) - 1)
+#define SUTLVectorPop(v)                        SUTLVectorErase(v, SUTLVectorSize(v) ? SUTLVectorSize(v) - 1 : 0)
 
 /**
  * @brief Pops \p count elements from the back of \p v. Synonymous to \p SUTLEraseN with
@@ -169,7 +169,7 @@
  * @param v The vector to pop elements from.
  * @param count The number of elements to pop. Must be less than or equal to size of \p v.
  */
-#define SUTLVectorPopN(v, count)                SUTLVectorEraseN(v, SUTLVectorSize(v) - count, count)
+#define SUTLVectorPopN(v, count)                SUTLVectorEraseN(v, SUTLVectorSize(v) >= count ? SUTLVectorSize(v) - count : 0, count)
 
 /**
  * @brief Executes \p expr for each element of \p v.
@@ -348,7 +348,7 @@ void SUTL_InternalVectorEraseN(void ** v, size_t at, size_t count);
          */
         if (at + count > SUTLVectorSize(*v))
         {
-            if (at > SUTLVectorSize(*v))
+            if ((at > SUTLVectorSize(*v)))
             {
                 SUTLErrorHandler("Elements requested to be erased don't exist.");
                 return;

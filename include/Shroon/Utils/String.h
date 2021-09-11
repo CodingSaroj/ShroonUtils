@@ -229,7 +229,7 @@ SUTLString SUTL_InternalStringSlice(SUTLString str, size_t at, size_t size);
     {
         size_t strSize = SUTLStringSize(str);
 
-        if (at > strSize)
+        if (at >= strSize)
         {
             SUTLErrorHandler("Invalid index specified for slicing string.");
             return NULL;
@@ -243,7 +243,7 @@ SUTLString SUTL_InternalStringSlice(SUTLString str, size_t at, size_t size);
 
         size = at + size > strSize ? strSize - at : size;
 
-        SUTLStringAppendN(slice, str + at, size);
+        SHRN_MEMCPY(slice, str + at, size);
 
         return slice;
     }
