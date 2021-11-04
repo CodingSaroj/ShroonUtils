@@ -45,9 +45,9 @@
 #else
     #include <stdlib.h>
 
-    #define SHRN_MALLOC(size)       malloc(size)
-    #define SHRN_REALLOC(old, size) realloc(old, size)
-    #define SHRN_FREE(ptr)          free(ptr)
+    #define SHRN_MALLOC(size)           malloc(size)
+    #define SHRN_REALLOC(oldptr, size)  realloc(oldptr, size)
+    #define SHRN_FREE(ptr)              free(ptr)
 #endif
 
 #ifdef SHRN_NO_USE_STRING_H
@@ -162,11 +162,11 @@
 #else
     #include <string.h>
 
-    #define SHRN_MEMCPY(dst, src, size) memcpy(dst, src, size)
-    #define SHRN_MEMMOVE(dst, src, size) memmove(dst, src, size)
-    #define SHRN_MEMSET(ptr, val, size) memset(ptr, val, size)
-    #define SHRN_STRLEN(str) strlen(str)
-    #define SHRN_STRCMP(str0, str1) strcmp(str0, str1)
+    #define SHRN_MEMCPY(dst, src, size)     memcpy(dst, src, size)
+    #define SHRN_MEMMOVE(dst, src, size)    memmove(dst, src, size)
+    #define SHRN_MEMSET(ptr, val, size)     memset(ptr, val, size)
+    #define SHRN_STRLEN(str)                strlen(str)
+    #define SHRN_STRCMP(str0, str1)         strcmp(str0, str1)
 #endif
 
 #include "ErrorHandler.h"
