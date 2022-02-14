@@ -144,12 +144,14 @@
         #ifdef SUTL_IMPLEMENTATION
             int SUTL_InternalStrcmp(const char * str0, const char * str1)
             {
+                size_t i = 0;
+
                 size_t len = SHRN_STRLEN(str0);
                 size_t len1 = SHRN_STRLEN(str1);
 
                 len = len1 < len ? len1 : len;
                 
-                for (size_t i = 0; i < len; i++)
+                for (i = 0; i < len; i++)
                     if (str0[i] != str1[i])
                         return str0[i] - str1[i];
 
