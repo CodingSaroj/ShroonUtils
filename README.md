@@ -7,3 +7,7 @@ libraries but you can use it in your project as well.
 
 For now, this library contains only implementations of dynamic array (also called vector), string,
 hash map and hash set. But in future the features might be expanded.
+
+## Documentation
+
+The documentation can be found [here](https://shroonutils.readthedocs.io/).
